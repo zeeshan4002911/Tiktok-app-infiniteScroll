@@ -1,0 +1,20 @@
+<div id="View" class="position-relative cursor-pointer">
+  <div class="d-flex justify-content-center align-items-center">
+    <ng-container>
+      <button *ngIf="pause_button" class="play-pause" (click)="videoControl()">
+        <i class="fa fa-pause"></i>
+      </button>
+      <button *ngIf="play_button" class="play-pause">
+        <i class="fa fa-play"></i>
+      </button>
+    </ng-container>
+    <video
+      class="img-fluid"
+      [src]="data?.video?.play_addr_h264?.url_list[0]"
+      (click)="videoControl()"
+      #video
+      [attr.data-ns-idx]="index"
+      loop
+    ></video>
+  </div>
+</div>
