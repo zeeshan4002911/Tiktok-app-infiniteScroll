@@ -3,7 +3,8 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  'X-RapidAPI-Key': 'f6ddf5453emsh5ba09650385164dp1562ebjsnbce929f5b759'
 };
 
 /*
