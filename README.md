@@ -1,6 +1,6 @@
 # TiktokApp
 
-Live Link:. https://642eae714d9793000858e699--teal-syrniki-f66b77.netlify.app/
+Live Link:. https://teal-syrniki-f66b77.netlify.app/
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.14.
 
