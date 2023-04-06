@@ -12,7 +12,7 @@ export class ReelsService {
 
   getReels(): Observable<any> {
     let headers = new HttpHeaders({
-      'X-RapidAPI-Key': environment['X-RapidAPI-Key'],
+      'X-RapidAPI-Key': environment['API_Key'],
       'X-RapidAPI-Host': 'tiktok-all-in-one.p.rapidapi.com',
     });
 
