@@ -17,7 +17,7 @@ export class ReelsService {
     });
 
     return this.http.get('https://tiktok-all-in-one.p.rapidapi.com/feed', {
-      params: { region: 'US', device_id: '7523368224928586621' },
+      params: { region: 'US' },
       headers,
     });
   }
