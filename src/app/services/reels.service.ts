@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,7 @@ export class ReelsService {
 
   getReels(): Observable<any> {
     let headers = new HttpHeaders({
-      'X-RapidAPI-Key': environment['API_Key'],
+      'X-RapidAPI-Key': environment.API_Key,
       'X-RapidAPI-Host': 'tiktok-all-in-one.p.rapidapi.com',
     });
 
