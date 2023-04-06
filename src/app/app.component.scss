@@ -1,6 +1,6 @@
 #App {
   height: 100vh;
-  background-color: black;
+  background-color: transparent;
 }
 
 #main {
@@ -25,8 +25,16 @@
 .loading {
   width: 100px;
   height: 100px;
-  border: 15px solid rgb(177, 177, 177);
-  border-top: 15px solid rgb(36, 36, 36);
+  border: 15px dashed rgb(177, 177, 177);
+  border-radius: 50%;
+  animation: spin 3000ms linear infinite;
+}
+
+.mini-loading {
+  width: 30px;
+  height: 30px;
+  border: 5px solid rgb(177, 177, 177);
+  border-top: 5px solid rgb(36, 36, 36);
   border-radius: 50%;
   animation: spin 800ms linear infinite;
 }
@@ -37,5 +45,11 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #main {
+    width: 100vw;
   }
 }

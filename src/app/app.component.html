@@ -4,11 +4,14 @@
 >
   <div *ngIf="fetched_data">
     <div class="row" id="main">
-      <div class="col scrollable">
+      <div class="col scrollable px-0">
         <ng-container
-          *ngFor="let data of fetched_data?.aweme_list; let i = index"
+          *ngFor="let data of fetched_data; let i = index"
         >
-          <app-view [data]="data" [index]="i" [maxIndex]="maxIndex"></app-view>
+          <app-view [data]="data" [index]="i" [maxIndex]="maxIndex" (fetchNow)="fetchData()"></app-view>
+        </ng-container>
+        <ng-container *ngIf="bottom_loader">
+          <div class="mini-loading mx-auto my-4"></div>
         </ng-container>
       </div>
     </div>

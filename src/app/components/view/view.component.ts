@@ -2,8 +2,10 @@ import {
   AfterViewInit,
   Component,
   ElementRef,
+  EventEmitter,
   Input,
   OnInit,
+  Output,
   ViewChild,
 } from '@angular/core';
 
@@ -21,18 +23,27 @@ export class ViewComponent implements OnInit, AfterViewInit {
   @Input() index!: number;
   @Input() maxIndex!: number;
   @ViewChild('video', { static: true }) video!: ElementRef;
+
+  @Output() fetchNow = new EventEmitter();
   ngOnInit(): void {}
 
   ngAfterViewInit(): void {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry: any) => {
         if (entry.isIntersecting) {
-          this.videoControl();
+          setTimeout(() => {
+            this.pause_button = false;
+            this.play_button = false;
+            this.video.nativeElement.play();
+          }, 500);
           if (entry.target.dataset.nsIdx == this.maxIndex - 1) {
-            console.log('end of reel');
+            console.log('end of reels');
+            this.fetchNow.emit();
           }
         } else {
-          this.videoControl();
+          this.video.nativeElement.pause();
+          this.pause_button = false;
+          this.play_button = true;
         }
       });
     });
@@ -53,6 +64,6 @@ export class ViewComponent implements OnInit, AfterViewInit {
     setTimeout(() => {
       this.play_button = false;
       this.video.nativeElement.play();
-    }, 700);
+    }, 600);
   }
 }
