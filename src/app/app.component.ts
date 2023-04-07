@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
     this.bottom_loader = true;
     this.reels.getReels().subscribe((data) => {
       this.bottom_loader = false;
-      this.fetched_data = this.fetched_data.concat(data?.aweme_list);
+      (data?.aweme_list).forEach((video: any) => this.fetched_data.push(video));
       this.maxIndex = this.fetched_data.length;
       console.log(this.fetched_data);
     });
