@@ -2,6 +2,9 @@
 
 Live Link:. https://teal-syrniki-f66b77.netlify.app/
 
+For mobile network providers (e.g., Jio) might need to connect with vpn
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.14.
 
 ## Development server
